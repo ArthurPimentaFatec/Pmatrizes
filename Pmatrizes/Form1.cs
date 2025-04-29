@@ -68,7 +68,7 @@ namespace Pmatrizes
         private void btnExercicio3_Click(object sender, EventArgs e)
         {
             Double[,] alunosNotas = new Double[20, 3];
-            string auxiliar, auxiliar2;
+            string auxiliar;
 
             for (int i = 0; i < 20; i++)
             {
@@ -86,12 +86,18 @@ namespace Pmatrizes
                     {
                         break;
                     }
-
-                    auxiliar2 = $"Aluno {i+1}: {(alunosNotas[i, 1] + alunosNotas[i, 2] + alunosNotas[i, 3]) / 3}\n";
                 }
             }
 
-            MessageBox.Show($"");
+            auxiliar = "";
+
+            for(int k = 0; k < 19; k++)
+            {
+                MessageBox.Show(k.ToString());
+                auxiliar = auxiliar + $"Aluno {k + 1}: {(alunosNotas[k, 1] + alunosNotas[k, 2] + alunosNotas[k, 3]) / 3}\n";
+            }
+
+            MessageBox.Show(auxiliar);
         }
     }
 }
